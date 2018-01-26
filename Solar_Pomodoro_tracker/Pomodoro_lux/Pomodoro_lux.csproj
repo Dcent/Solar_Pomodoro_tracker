@@ -85,5 +85,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Solar_Pomodoro.Core\Solar_Pomodoro.Core.csproj">
+      <Project>{5d9da6c1-b0a8-4fe8-b281-1a371667115f}</Project>
+      <Name>Solar_Pomodoro.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

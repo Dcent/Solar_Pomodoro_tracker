@@ -29,21 +29,27 @@
         private void InitializeComponent()
         {
             this.runBtn = new System.Windows.Forms.Button();
-            this.colorR = new System.Windows.Forms.TextBox();
-            this.colorG = new System.Windows.Forms.TextBox();
-            this.colorB = new System.Windows.Forms.TextBox();
             this.shutdownBtn = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pomodoroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pomodoroPanel = new System.Windows.Forms.Panel();
+            this.colorsBox = new System.Windows.Forms.ComboBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.loopCheck = new System.Windows.Forms.CheckBox();
+            this.stepNameBox = new System.Windows.Forms.TextBox();
+            this.stepTimeBox = new System.Windows.Forms.TextBox();
+            this.addStepBtn = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.loopCountBox = new System.Windows.Forms.TextBox();
+            this.lockScreenCheck = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.pomodoroPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // runBtn
             // 
-            this.runBtn.Location = new System.Drawing.Point(328, 171);
+            this.runBtn.Location = new System.Drawing.Point(757, 238);
             this.runBtn.Name = "runBtn";
             this.runBtn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.runBtn.Size = new System.Drawing.Size(75, 23);
@@ -52,33 +58,9 @@
             this.runBtn.UseVisualStyleBackColor = true;
             this.runBtn.Click += new System.EventHandler(this.runBtn_Click);
             // 
-            // colorR
-            // 
-            this.colorR.Location = new System.Drawing.Point(259, 145);
-            this.colorR.Name = "colorR";
-            this.colorR.Size = new System.Drawing.Size(44, 20);
-            this.colorR.TabIndex = 1;
-            this.colorR.Text = "0";
-            // 
-            // colorG
-            // 
-            this.colorG.Location = new System.Drawing.Point(309, 145);
-            this.colorG.Name = "colorG";
-            this.colorG.Size = new System.Drawing.Size(44, 20);
-            this.colorG.TabIndex = 2;
-            this.colorG.Text = "255";
-            // 
-            // colorB
-            // 
-            this.colorB.Location = new System.Drawing.Point(359, 145);
-            this.colorB.Name = "colorB";
-            this.colorB.Size = new System.Drawing.Size(44, 20);
-            this.colorB.TabIndex = 3;
-            this.colorB.Text = "0";
-            // 
             // shutdownBtn
             // 
-            this.shutdownBtn.Location = new System.Drawing.Point(144, 171);
+            this.shutdownBtn.Location = new System.Drawing.Point(676, 238);
             this.shutdownBtn.Name = "shutdownBtn";
             this.shutdownBtn.Size = new System.Drawing.Size(75, 23);
             this.shutdownBtn.TabIndex = 5;
@@ -113,17 +95,102 @@
             // 
             // pomodoroPanel
             // 
-            this.pomodoroPanel.Controls.Add(this.colorR);
+            this.pomodoroPanel.Controls.Add(this.loopCountBox);
+            this.pomodoroPanel.Controls.Add(this.listView1);
+            this.pomodoroPanel.Controls.Add(this.addStepBtn);
+            this.pomodoroPanel.Controls.Add(this.stepTimeBox);
+            this.pomodoroPanel.Controls.Add(this.stepNameBox);
+            this.pomodoroPanel.Controls.Add(this.loopCheck);
+            this.pomodoroPanel.Controls.Add(this.checkBox2);
+            this.pomodoroPanel.Controls.Add(this.lockScreenCheck);
+            this.pomodoroPanel.Controls.Add(this.colorsBox);
             this.pomodoroPanel.Controls.Add(this.shutdownBtn);
             this.pomodoroPanel.Controls.Add(this.runBtn);
-            this.pomodoroPanel.Controls.Add(this.colorB);
-            this.pomodoroPanel.Controls.Add(this.colorG);
-            this.pomodoroPanel.Location = new System.Drawing.Point(106, 56);
+            this.pomodoroPanel.Location = new System.Drawing.Point(12, 27);
             this.pomodoroPanel.Name = "pomodoroPanel";
-            this.pomodoroPanel.Size = new System.Drawing.Size(413, 206);
+            this.pomodoroPanel.Size = new System.Drawing.Size(835, 264);
             this.pomodoroPanel.TabIndex = 7;
             // 
-            // Form1
+            // colorsBox
+            // 
+            this.colorsBox.FormattingEnabled = true;
+            this.colorsBox.Location = new System.Drawing.Point(248, 20);
+            this.colorsBox.Name = "colorsBox";
+            this.colorsBox.Size = new System.Drawing.Size(121, 21);
+            this.colorsBox.TabIndex = 6;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(137, 238);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(92, 17);
+            this.checkBox2.TabIndex = 8;
+            this.checkBox2.Text = "Show Overlay";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // loopCheck
+            // 
+            this.loopCheck.AutoSize = true;
+            this.loopCheck.Location = new System.Drawing.Point(224, 238);
+            this.loopCheck.Name = "loopCheck";
+            this.loopCheck.Size = new System.Drawing.Size(78, 17);
+            this.loopCheck.TabIndex = 9;
+            this.loopCheck.Text = "Loop steps";
+            this.loopCheck.UseVisualStyleBackColor = true;
+            // 
+            // stepNameBox
+            // 
+            this.stepNameBox.Location = new System.Drawing.Point(36, 20);
+            this.stepNameBox.Name = "stepNameBox";
+            this.stepNameBox.Size = new System.Drawing.Size(100, 20);
+            this.stepNameBox.TabIndex = 10;
+            this.stepNameBox.Text = "Name";
+            // 
+            // stepTimeBox
+            // 
+            this.stepTimeBox.Location = new System.Drawing.Point(142, 20);
+            this.stepTimeBox.Name = "stepTimeBox";
+            this.stepTimeBox.Size = new System.Drawing.Size(100, 20);
+            this.stepTimeBox.TabIndex = 11;
+            this.stepTimeBox.Text = "Time in Min";
+            // 
+            // addStepBtn
+            // 
+            this.addStepBtn.Location = new System.Drawing.Point(375, 20);
+            this.addStepBtn.Name = "addStepBtn";
+            this.addStepBtn.Size = new System.Drawing.Size(24, 23);
+            this.addStepBtn.TabIndex = 12;
+            this.addStepBtn.Text = "+";
+            this.addStepBtn.UseVisualStyleBackColor = true;
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(4, 47);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(395, 176);
+            this.listView1.TabIndex = 14;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // loopCountBox
+            // 
+            this.loopCountBox.Location = new System.Drawing.Point(311, 238);
+            this.loopCountBox.Name = "loopCountBox";
+            this.loopCountBox.Size = new System.Drawing.Size(100, 20);
+            this.loopCountBox.TabIndex = 15;
+            this.loopCountBox.Text = "Number of Loops";
+            // 
+            // lockScreenCheck
+            // 
+            this.lockScreenCheck.AutoSize = true;
+            this.lockScreenCheck.Location = new System.Drawing.Point(4, 238);
+            this.lockScreenCheck.Name = "lockScreenCheck";
+            this.lockScreenCheck.Size = new System.Drawing.Size(135, 17);
+            this.lockScreenCheck.TabIndex = 7;
+            this.lockScreenCheck.Text = "Pause on Lock Screen";
+            this.lockScreenCheck.UseVisualStyleBackColor = true;
+            // 
+            // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -131,8 +198,8 @@
             this.Controls.Add(this.pomodoroPanel);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainView";
+            this.Text = "Solar Pomodoro App";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.pomodoroPanel.ResumeLayout(false);
@@ -145,14 +212,20 @@
         #endregion
 
         private System.Windows.Forms.Button runBtn;
-        private System.Windows.Forms.TextBox colorR;
-        private System.Windows.Forms.TextBox colorG;
-        private System.Windows.Forms.TextBox colorB;
         private System.Windows.Forms.Button shutdownBtn;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem pomodoroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.Panel pomodoroPanel;
+        private System.Windows.Forms.ComboBox colorsBox;
+        private System.Windows.Forms.TextBox loopCountBox;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button addStepBtn;
+        private System.Windows.Forms.TextBox stepTimeBox;
+        private System.Windows.Forms.TextBox stepNameBox;
+        private System.Windows.Forms.CheckBox loopCheck;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox lockScreenCheck;
     }
 }
 

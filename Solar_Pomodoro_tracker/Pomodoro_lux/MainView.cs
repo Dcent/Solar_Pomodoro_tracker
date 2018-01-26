@@ -2,12 +2,14 @@
 using System.Linq;
 using System.Windows.Forms;
 using LuxaforSharp;
+using Solar_Pomodoro.Core.Models;
 
 namespace Pomodro_lux
 {
     public partial class MainView : Form
     {
         private IDevice device = null;
+        PreloadedColors colors = new PreloadedColors();
 
         public MainView()
         {
@@ -15,16 +17,20 @@ namespace Pomodro_lux
             listOfDevices.Scan();
             device = listOfDevices.First();
             InitializeComponent();
+            
+            colorsBox.DataSource = new BindingSource(colors.ColorsMap, null);
+            colorsBox.DisplayMember = "Key";
+            colorsBox.ValueMember = "Value";
+
         }
 
         private void runBtn_Click(object sender, EventArgs e)
         {
-            byte R = byte.Parse(colorR.Text);
-            byte G = byte.Parse(colorG.Text);
-            byte B = byte.Parse(colorB.Text);
+           // string s = colorsBox.SelectedValue;
 
-            device?.SetColor(LedTarget.AllFrontSide, new Color(R, G, B)); // Immediatly switches all leds to picked color
-            device?.SetColor(LedTarget.AllBackSide, new Color(G, R, B)); // Immediatly switches all leds to picked color
+
+            device?.SetColor(LedTarget.AllFrontSide, (Color) colorsBox.SelectedValue); // Immediatly switches all leds to picked color
+            //device?.SetColor(LedTarget.AllBackSide, new Color(G, R, B)); // Immediatly switches all leds to picked color
         }
 
         private void shutdownBtn_Click(object sender, EventArgs e)
