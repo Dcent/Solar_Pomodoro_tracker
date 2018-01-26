@@ -5,11 +5,11 @@ using LuxaforSharp;
 
 namespace Pomodro_lux
 {
-    public partial class Form1 : Form
+    public partial class MainView : Form
     {
         private IDevice device = null;
 
-        public Form1()
+        public MainView()
         {
             IDeviceList listOfDevices = new DeviceList();
             listOfDevices.Scan();
