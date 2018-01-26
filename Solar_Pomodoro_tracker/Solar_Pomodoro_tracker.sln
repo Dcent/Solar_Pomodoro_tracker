@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pomodoro_lux", "Pomodoro_lux\Pomodoro_lux.csproj", "{06B1E347-1DA2-4100-9383-9A3D3DC216B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pomodoro_lux.Core", "Pomodoro_lux.Core\Pomodoro_lux.Core.csproj", "{E27AA24B-AEF0-47BE-832F-FFE3F165F31A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{06B1E347-1DA2-4100-9383-9A3D3DC216B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06B1E347-1DA2-4100-9383-9A3D3DC216B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06B1E347-1DA2-4100-9383-9A3D3DC216B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E27AA24B-AEF0-47BE-832F-FFE3F165F31A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E27AA24B-AEF0-47BE-832F-FFE3F165F31A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E27AA24B-AEF0-47BE-832F-FFE3F165F31A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E27AA24B-AEF0-47BE-832F-FFE3F165F31A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -32,5 +32,15 @@ namespace Pomodro_lux
             device?.SetColor(LedTarget.All, new Color(0, 0, 0)); // Immediatly switches all leds to picked color
             device?.Dispose();
         }
+
+        private void pomodoroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pomodoroPanel.Visible = true;
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pomodoroPanel.Visible = false;
+        }
     }
 }
