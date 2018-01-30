@@ -1,5 +1,5 @@
 # Solar_Pomodro_tracker
-Welcome to our repository, made by Me(RMS) for Solar
+Welcome to our repository, made by Me (RMS) for Solar
 This Project is started because we want a better way of working and therefore we need a gadget
 to show when we are busy at working trying to dig in to a task
 
