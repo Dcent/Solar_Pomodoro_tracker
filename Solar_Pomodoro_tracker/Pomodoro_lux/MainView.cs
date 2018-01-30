@@ -21,6 +21,8 @@ namespace Pomodro_lux
             colorsBox.DataSource = new BindingSource(colors.ColorsMap, null);
             colorsBox.DisplayMember = "Key";
             colorsBox.ValueMember = "Value";
+            pomodoroPanel.Visible = true;
+            settingsPanel.Visible = false;
 
         }
 
@@ -42,11 +44,13 @@ namespace Pomodro_lux
         private void pomodoroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pomodoroPanel.Visible = true;
+            settingsPanel.Visible = false;
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pomodoroPanel.Visible = false;
+            settingsPanel.Visible = true;
         }
     }
 }

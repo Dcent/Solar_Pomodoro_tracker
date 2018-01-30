@@ -44,6 +44,7 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.lockScreenCheck = new System.Windows.Forms.CheckBox();
             this.colorsBox = new System.Windows.Forms.ComboBox();
+            this.settingsPanel = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.pomodoroPanel.SuspendLayout();
             this.SuspendLayout();
@@ -191,11 +192,19 @@
             this.colorsBox.Size = new System.Drawing.Size(121, 21);
             this.colorsBox.TabIndex = 6;
             // 
+            // settingsPanel
+            // 
+            this.settingsPanel.Location = new System.Drawing.Point(12, 27);
+            this.settingsPanel.Name = "settingsPanel";
+            this.settingsPanel.Size = new System.Drawing.Size(835, 264);
+            this.settingsPanel.TabIndex = 16;
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(859, 303);
+            this.Controls.Add(this.settingsPanel);
             this.Controls.Add(this.pomodoroPanel);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -230,6 +239,7 @@
         private System.Windows.Forms.CheckBox loopCheck;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox lockScreenCheck;
+        private System.Windows.Forms.Panel settingsPanel;
     }
 }
 
